@@ -6,9 +6,6 @@ title: InputSwitcher Privacy Policy
 # InputSwitcher Privacy Policy
 
 **Effective date:** July 26, 2026
-# InputSwitcher Privacy Policy
-
-**Effective date:** July 26, 2026
 
 InputSwitcher is designed to manage input method rules locally on your Mac. This Privacy Policy explains what the app processes, where that information is stored, and the choices available to you.
 
