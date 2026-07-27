@@ -1,0 +1,84 @@
+{
+  "identifier" : "7865D9B7-2B29-48BA-866B-8A38D57F36B7",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "4.99",
+      "familyShareable" : false,
+      "internalID" : "9C737A34-14E9-4A3A-AC35-E8BDE9A0B087",
+      "localizations" : [
+        {
+          "description" : "Unlock unlimited rules, smart learning, unlimited rule locks, global locking, backups, cleanup, and iCloud sync.",
+          "displayName" : "InputSwitcher Pro",
+          "locale" : "en_US"
+        },
+        {
+          "description" : "解锁无限规则、智能学习、无限规则锁定、全局锁定、备份、清理和 iCloud 同步。",
+          "displayName" : "InputSwitcher 专业版",
+          "locale" : "zh_CN"
+        },
+        {
+          "description" : "解鎖無限規則、智慧學習、無限規則鎖定、全域鎖定、備份、清理和 iCloud 同步。",
+          "displayName" : "InputSwitcher 專業版",
+          "locale" : "zh_TW"
+        },
+        {
+          "description" : "無制限のルール、スマート学習、無制限のルールロック、グローバルロック、バックアップ、整理、iCloud同期を利用できます。",
+          "displayName" : "InputSwitcher Pro",
+          "locale" : "ja"
+        },
+        {
+          "description" : "무제한 규칙, 스마트 학습, 무제한 규칙 잠금, 전체 잠금, 백업, 정리 및 iCloud 동기화를 사용할 수 있습니다.",
+          "displayName" : "InputSwitcher Pro",
+          "locale" : "ko"
+        },
+        {
+          "description" : "Unbegrenzte Regeln, intelligentes Lernen, unbegrenzte Regelsperren, globale Sperre, Backups, Bereinigung und iCloud-Sync.",
+          "displayName" : "InputSwitcher Pro",
+          "locale" : "de_DE"
+        },
+        {
+          "description" : "Débloquez les règles illimitées, l’apprentissage intelligent, le verrouillage illimité des règles, le verrouillage global et la synchronisation iCloud.",
+          "displayName" : "InputSwitcher Pro",
+          "locale" : "fr_FR"
+        },
+        {
+          "description" : "Desbloquea reglas ilimitadas, aprendizaje inteligente, bloqueos de reglas ilimitados, bloqueo global y sincronización con iCloud.",
+          "displayName" : "InputSwitcher Pro",
+          "locale" : "es_ES"
+        },
+        {
+          "description" : "Desbloqueie regras ilimitadas, aprendizado inteligente, bloqueios ilimitados de regras, bloqueio global e sincronização do iCloud.",
+          "displayName" : "InputSwitcher Pro",
+          "locale" : "pt_BR"
+        }
+      ],
+      "productID" : "com.hans.InputSwitcher.pro",
+      "referenceName" : "InputSwitcher Pro Lifetime",
+      "type" : "NonConsumable"
+    }
+  ],
+  "settings" : {
+    "_applicationInternalID" : "InputSwitcher",
+    "_developerTeamID" : "QBSRG6LQXM",
+    "_failTransactionsEnabled" : false,
+    "_lastSynchronizedDate" : 0,
+    "_locale" : "en_US",
+    "_renewalBillingIssuesEnabled" : false,
+    "_showStoreKitErrorDialogs" : false,
+    "_storefront" : "USA",
+    "_storeKitErrors" : [
+
+    ],
+    "_timeRate" : 0
+  },
+  "subscriptionGroups" : [
+
+  ],
+  "version" : {
+    "major" : 3,
+    "minor" : 0
+  }
+}
