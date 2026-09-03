@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InputSwitcher - 支持</title>
+    <style>
+        :root { --bg: #f5f5f7; --text: #1d1d1f; --secondary: #86868b; --card: #ffffff; --accent: #007aff; --border: #d2d2d7; }
+        @media (prefers-color-scheme: dark) {
+            :root { --bg: #1d1d1f; --text: #f5f5f7; --secondary: #86868b; --card: #2d2d2f; --border: #424245; }
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+        .container { max-width: 720px; margin: 0 auto; padding: 60px 24px; }
+        .hero { text-align: center; margin-bottom: 48px; }
+        .hero img { width: 80px; height: 80px; border-radius: 20px; margin-bottom: 20px; }
+        .hero h1 { font-size: 32px; font-weight: 700; margin-bottom: 8px; }
+        .hero p { color: var(--secondary); font-size: 18px; }
+        .card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 32px; margin-bottom: 24px; }
+        .card h2 { font-size: 22px; font-weight: 600; margin-bottom: 16px; }
+        .card p { color: var(--secondary); margin-bottom: 12px; }
+        .card a { color: var(--accent); text-decoration: none; }
+        .card a:hover { text-decoration: underline; }
+        .faq-item { margin-bottom: 20px; }
+        .faq-item h3 { font-size: 16px; font-weight: 600; margin-bottom: 6px; }
+        .faq-item p { font-size: 14px; color: var(--secondary); }
+        .footer { text-align: center; color: var(--secondary); font-size: 14px; padding-top: 40px; border-top: 1px solid var(--border); margin-top: 48px; }
+        .lang-switch { text-align: right; margin-bottom: 16px; }
+        .lang-switch button { background: none; border: 1px solid var(--border); border-radius: 8px; padding: 6px 14px; cursor: pointer; color: var(--text); font-size: 13px; }
+        .lang-switch button.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+        [lang] { display: none; }
+        [lang].active { display: block; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="lang-switch">
+            <button onclick="switchLang('zh')" class="active" id="btn-zh">中文</button>
+            <button onclick="switchLang('en')" id="btn-en">English</button>
+        </div>
+
+        <div class="hero">
+            <h1>InputSwitcher</h1>
+            <p>自动输入法切换工具</p>
+        </div>
+
+        <!-- 中文 -->
+        <div lang="zh" class="active">
+            <div class="card">
+                <h2>联系我们</h2>
+                <p>如有任何问题、建议或反馈，请通过以下方式联系我们：</p>
+                <p>📧 邮箱：<a href="mailto:wxuesong@gmail.com">wxuesong@gmail.com</a></p>
+                <p>🐙 GitHub：<a href="https://github.com/wxuesong/InputSwitcher">github.com/wxuesong/InputSwitcher</a></p>
+                <p>我们会在 48 小时内回复您的邮件。</p>
+            </div>
+
+            <div class="card">
+                <h2>常见问题</h2>
+                <div class="faq-item">
+                    <h3>InputSwitcher 如何工作？</h3>
+                    <p>InputSwitcher 会在您切换应用时自动切换到对应的输入法。您只需为每个应用设置一次输入法规则，之后每次切换应用时都会自动生效。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>为什么需要辅助功能权限？</h3>
+                    <p>辅助功能权限用于监听应用切换事件和自动切换输入法。InputSwitcher 不会收集或传输任何个人数据。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>开机自启功能会短暂退出，这正常吗？</h3>
+                    <p>是的，这是正常现象。由于 macOS 沙盒限制，启用或禁用开机自启时应用会短暂退出，这是系统行为，非 bug。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>免费版和专业版有什么区别？</h3>
+                    <p>免费版最多支持 5 条规则。专业版一次购买永久使用，解锁无限规则、锁定功能、批量操作、导入导出、规则清理等高级功能。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>如何恢复购买？</h3>
+                    <p>打开 InputSwitcher 菜单 → 点击「InputSwitcher Pro」→ 点击「恢复购买」按钮即可。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>支持哪些语言？</h3>
+                    <p>当前支持简体中文、繁体中文、英文、日语、韩语、德语、法语、西班牙语、葡萄牙语（巴西）。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- English -->
+        <div lang="en">
+            <div class="card">
+                <h2>Contact Us</h2>
+                <p>If you have any questions, suggestions, or feedback, please reach out:</p>
+                <p>📧 Email: <a href="mailto:wxuesong@gmail.com">wxuesong@gmail.com</a></p>
+                <p>🐙 GitHub: <a href="https://github.com/wxuesong/InputSwitcher">github.com/wxuesong/InputSwitcher</a></p>
+                <p>We typically respond within 48 hours.</p>
+            </div>
+
+            <div class="card">
+                <h2>FAQ</h2>
+                <div class="faq-item">
+                    <h3>How does InputSwitcher work?</h3>
+                    <p>InputSwitcher automatically switches your input method when you switch between applications. Just set up a rule once for each app, and it works automatically going forward.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Why does it need Accessibility permissions?</h3>
+                    <p>Accessibility permissions are required to monitor app switching events and automatically change input methods. InputSwitcher does not collect or transmit any personal data.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Is it normal for the app to quit briefly when toggling Launch at Login?</h3>
+                    <p>Yes, this is expected. Due to macOS sandbox restrictions, the app briefly quits when enabling or disabling launch at login. This is system behavior, not a bug.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What's the difference between Free and Pro?</h3>
+                    <p>The free version supports up to 5 rules. Pro is a one-time purchase that unlocks unlimited rules, locking, batch operations, import/export, rule cleanup, and more.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How do I restore my purchase?</h3>
+                    <p>Open the InputSwitcher menu → click "InputSwitcher Pro" → click "Restore Purchase".</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Which languages are supported?</h3>
+                    <p>Currently supports Simplified Chinese, Traditional Chinese, English, Japanese, Korean, German, French, Spanish, and Brazilian Portuguese.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2026 Hans. All rights reserved. | <a href="https://wxuesong.github.io/InputSwitcher/privacy/">Privacy Policy</a></p>
+        </div>
+    </div>
+
+    <script>
+        function switchLang(lang) {
+            document.querySelectorAll('[lang]').forEach(el => el.classList.remove('active'));
+            document.querySelector(`[lang="${lang}"]`).classList.add('active');
+            document.querySelectorAll('.lang-switch button').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(`btn-${lang}`).classList.add('active');
+        }
+    </script>
+</body>
+</html>
