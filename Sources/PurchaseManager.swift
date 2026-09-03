@@ -47,7 +47,6 @@ final class PurchaseManager: ObservableObject {
 
     private var transactionUpdates: Task<Void, Never>?
     private var productLoadingTask: Task<Product?, Never>?
-    private var activityGeneration = 0
 
     var displayPrice: String {
         product?.displayPrice ?? L10n.string("pro.price_unavailable")
@@ -76,25 +75,27 @@ final class PurchaseManager: ObservableObject {
     }
 
     func refresh() async {
-        let operation = beginActivity(.loading)
+        activity = .loading
         if product == nil {
             await loadProduct()
         }
         await refreshEntitlements()
-        if operation == activityGeneration {
-            activity = product != nil || isPro ? .idle : .failed
+        if product != nil || isPro {
+            activity = .idle
+        } else {
+            activity = .failed
         }
     }
 
     func purchasePro() async {
-        let operation = beginActivity(.purchasing)
+        activity = .purchasing
 
         if product == nil {
             await loadProduct()
         }
 
         guard let product else {
-            finishActivity(.failed, operation: operation)
+            activity = .failed
             return
         }
 
@@ -102,32 +103,37 @@ final class PurchaseManager: ObservableObject {
             switch try await product.purchase() {
             case .success(let verification):
                 guard case .verified(let transaction) = verification else {
-                    finishActivity(.failed, operation: operation)
+                    activity = .failed
                     return
                 }
+                // 关键修复：先标记购买成功再finish，确保UI立即更新
+                hasProEntitlement = true
                 await transaction.finish()
-                await refreshEntitlements()
-                finishActivity(.idle, operation: operation)
+                // 后台刷新保证同步
+                Task { await refreshEntitlements() }
+                activity = .idle
+                NotificationCenter.default.post(name: .proEntitlementDidChange, object: nil)
             case .pending:
-                finishActivity(.pending, operation: operation)
+                activity = .pending
             case .userCancelled:
-                finishActivity(.idle, operation: operation)
+                activity = .idle
             @unknown default:
-                finishActivity(.failed, operation: operation)
+                activity = .failed
             }
         } catch {
-            finishActivity(.failed, operation: operation)
+            // 购买失败，保持 failed 状态
+            activity = .failed
         }
     }
 
     func restorePurchases() async {
-        let operation = beginActivity(.restoring)
+        activity = .restoring
         do {
             try await AppStore.sync()
             await refreshEntitlements()
-            finishActivity(.idle, operation: operation)
+            activity = .idle
         } catch {
-            finishActivity(.failed, operation: operation)
+            activity = .failed
         }
     }
 
@@ -168,16 +174,5 @@ final class PurchaseManager: ObservableObject {
         if wasPro != isPro {
             NotificationCenter.default.post(name: .proEntitlementDidChange, object: nil)
         }
-    }
-
-    private func beginActivity(_ activity: PurchaseActivity) -> Int {
-        activityGeneration += 1
-        self.activity = activity
-        return activityGeneration
-    }
-
-    private func finishActivity(_ activity: PurchaseActivity, operation: Int) {
-        guard operation == activityGeneration else { return }
-        self.activity = activity
     }
 }

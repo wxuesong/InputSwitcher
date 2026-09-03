@@ -87,8 +87,14 @@
             ReferencedContainer = "container:InputSwitcher.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <CommandLineArguments>
+         <CommandLineArgument
+            argument = "-testUnlockEnabled NO"
+            isEnabled = "YES">
+         </CommandLineArgument>
+      </CommandLineArguments>
       <StoreKitConfigurationFileReference
-         identifier = "../../../StoreKit/InputSwitcher.storekit">
+         identifier = "../../StoreKit/InputSwitcher.storekit">
       </StoreKitConfigurationFileReference>
    </LaunchAction>
    <ProfileAction

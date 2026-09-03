@@ -1,0 +1,6 @@
+title: InputSwitcher
+description: Automatic input method switching for macOS
+url: https://wxuesong.github.io
+baseurl: /InputSwitcher
+theme: jekyll-theme-minimal
+markdown: kramdown

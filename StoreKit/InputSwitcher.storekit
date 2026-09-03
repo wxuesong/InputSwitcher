@@ -61,8 +61,8 @@
     }
   ],
   "settings" : {
-    "_applicationInternalID" : "InputSwitcher",
-    "_developerTeamID" : "QBSRG6LQXM",
+    "_applicationInternalID" : "",
+    "_developerTeamID" : "",
     "_failTransactionsEnabled" : false,
     "_lastSynchronizedDate" : 0,
     "_locale" : "en_US",
