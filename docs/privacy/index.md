@@ -1,47 +1,79 @@
 ---
 layout: default
 title: InputSwitcher Privacy Policy
-permalink: /privacy/
 ---
 
 # InputSwitcher Privacy Policy
 
-**Effective date: July 26, 2026**
+**Effective date:** July 26, 2026
 
-InputSwitcher is a macOS menu bar utility that assigns input methods to applications. This Privacy Policy explains what the app processes and where that information is stored.
+InputSwitcher is designed to manage input method rules locally on your Mac. This Privacy Policy explains what the app processes, where that information is stored, and the choices available to you.
 
-## Information the app processes
+## 1. Summary
 
-InputSwitcher reads the frontmost application and the current input method state so it can apply the matching rule. It may read the names, bundle identifiers, and icons of applications that you select when creating rules.
+InputSwitcher does not include advertising, analytics, tracking, or third-party crash-reporting services. We do not operate a server that receives your app data, and we do not sell or share your data for advertising or data-broker purposes.
 
-InputSwitcher does not read, record, transmit, or store keyboard content, typed text, documents, passwords, contacts, or browsing history.
+InputSwitcher does **not** read, record, or transmit the text you type. It also does not read clipboard contents.
 
-## Local storage
+## 2. Information Processed on Your Mac
 
-Rules and preferences are stored locally on your Mac using the app's preferences storage. They remain on the Mac unless you export them or enable iCloud Sync.
+To switch input methods for applications, InputSwitcher processes the following information on your Mac:
 
-## iCloud Sync
+- The name and bundle identifier of the frontmost application.
+- Available and current input method identifiers and display names.
+- Rules you create, including the application identifier, application name, and selected input method.
+- App preferences, including shortcut, notification, launch-at-login, and rule-lock settings.
+- Local learning observations when you enable the optional smart learning feature.
 
-If you enable iCloud Sync, rules and selected preferences are stored in Apple's iCloud Key-Value Storage and synchronized between your Macs using the same Apple ID. InputSwitcher does not operate its own server and does not receive a copy of this data.
+This information is stored locally in the app's preferences unless you choose to enable iCloud Sync.
 
-Disabling iCloud Sync stops future synchronization. iCloud data is also subject to Apple's terms and privacy policy.
+## 3. Optional iCloud Sync
 
-## Purchases
+iCloud Sync is optional. When you enable it, InputSwitcher stores rules and related settings in your private iCloud Key-Value Store so they can sync between Macs signed in to the same Apple Account.
 
-Professional features are purchased through Apple's App Store and StoreKit. InputSwitcher does not receive or store payment card details. Apple processes payment, purchase history, and transaction verification.
+The synced information can include rule data, application names and bundle identifiers, input method identifiers and names, relevant settings, a randomly generated sync device identifier, and sync version metadata. InputSwitcher does not route this information through a developer-operated server and the developer does not receive it.
 
-## Data sharing and tracking
+Disabling iCloud Sync stops future synchronization. Your iCloud data is also subject to Apple's terms and privacy policy.
 
-InputSwitcher does not include advertising, analytics, tracking, crash-reporting services, or third-party data collection SDKs. The app does not sell or share personal information.
+## 4. Purchases
 
-## Permissions
+InputSwitcher offers an optional Pro purchase. Payments and transaction processing are handled by Apple through StoreKit. InputSwitcher reads the current purchase entitlement on your device only to determine whether Pro features are available. We do not receive your payment card information.
 
-The app does not require Accessibility, Input Monitoring, or Full Disk Access permissions. File access occurs only when you explicitly choose a file through a standard macOS open or save panel.
+## 5. Debug Logs
 
-## Changes to this policy
+Debug logging is off by default. If you enable it, InputSwitcher creates a local debug log on your Mac. It may include timestamps, frontmost application names and bundle identifiers, rule status, and input method identifiers. The log remains on your Mac, is limited in size, and is removed when you turn off Debug Mode.
 
-This policy may be updated when the app's data practices change. The effective date at the top of this page identifies the current version.
+## 6. Import, Export, and Clipboard
 
-## Contact
+InputSwitcher reads or writes rule files only when you explicitly choose to import or export them. Exported files are saved to the location you select.
 
-For privacy questions, please use the [InputSwitcher support page]({{ '/support/' | relative_url }}).
+When you choose the command to copy an application's bundle identifier, InputSwitcher writes that identifier to the clipboard. It does not read existing clipboard contents.
+
+## 7. Retention and Your Choices
+
+Local rules and preferences remain on your Mac until you change or remove them. You can remove rules in InputSwitcher and disable Debug Mode to remove its local debug log.
+
+InputSwitcher does not maintain a developer account or server-side profile for you. For iCloud-synced information, use Apple's account and iCloud controls in addition to the sync setting in the app.
+
+## 8. Data Collection and Tracking
+
+For the current version of InputSwitcher:
+
+- We do not collect data from the app.
+- We do not track you across apps or websites.
+- We do not use advertising identifiers, analytics SDKs, or third-party tracking technologies.
+- We do not sell personal information.
+
+The App Store privacy label for the current version is **Data Not Collected**.
+
+## 9. Changes to This Policy
+
+We may update this policy when InputSwitcher changes. The effective date at the top of this page will be updated when material changes are made.
+
+## 10. Contact
+
+For privacy questions, please use the support contact or support link listed on the InputSwitcher App Store product page.
+
+## 11. License Terms
+
+Unless a different license agreement is presented with the app, InputSwitcher is provided under the [Apple Standard End User License Agreement](https://www.apple.com/legal/internet-services/itunes/dev/stdeula/).
